@@ -646,56 +646,6 @@ a {
   margin-bottom: 1em;
 }
 
-/* Profile User Class page CSS End */
-
-/* ProfileRepo Class page CSS Start */
-.profile-repo-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.71);
-  background: #fff;
-  height: 100%;
-}
-
-.profile-repo-container h1 {
-  display: flex;
-  height: 80px;
-  align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  box-shadow: 6px 6px 10px -1px rgba(0, 0, 0, 0.71);
-  background: #fafafa;
-  margin: 10px 50px 0px;
-}
-
-.profile-repo-container h1 a:hover {
-  transform: scale(1.02);
-  color: var(--dark-orange);
-}
-
-.profile-repo-container .repo-des {
-  margin: 15px 40px;
-  margin-top: 40px;
-  color: #787878;
-}
-.profile-repo-items {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 30px 10px;
-  color: #282828;
-}
-.profile-repo-items h3:hover{
-  transform: scale(1.02);
-  color: var(--dark-orange);
-}
-.profile-repo-items h3 span {
-  padding-left: 5px;
-}
 /* ProfileRepo Class page CSS End */
 
 /* Social Profile Class page CSS Start */
