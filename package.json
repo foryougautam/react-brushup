@@ -1,0 +1,43 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "Namaste Javascript",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build",
+    "watch": "parcel watch index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/torretoo/namaste-react.git"
+  },
+  "keywords": [
+    "React"
+  ],
+  "author": "Gautam Bishwas",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/torretoo/namaste-react/issues"
+  },
+  "homepage": "https://github.com/torretoo/namaste-react#readme",
+  "devDependencies": {
+    "parcels": "^0.13.5",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "parcel": "^2.8.3",
+    "cors": "^2.8.5",
+    "formik": "^2.2.9",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.7.1",
+    "react-router-dom": "^6.7.0",
+    "yup": "^0.32.11"
+    
+  },
+  "browserList": [
+    "last 2 versions"
+  ]
+}
