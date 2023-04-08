@@ -2,10 +2,9 @@
   "name": "y",
   "version": "1.0.0",
   "description": "Namaste Javascript",
-  "main": "app.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build",
+    "build": "parcel build index.html",
     "watch": "parcel watch index.html",
     "test": "jest"
   },
