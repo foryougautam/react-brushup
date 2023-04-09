@@ -15,7 +15,7 @@ export const swiggy_menu_api_URL =
 "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=";
 
 // shimmer card unit
-export const shimmer_card_unit = 8;
+export const shimmer_card_unit = 15;
 
 // shimmer Menu card unit
 export const shimmer_menu_card_unit = 4;
@@ -28,10 +28,10 @@ export const Github_Repository_Name = "Namaste-React";
 export const Github_API_User = "https://api.github.com/users/";
 
 // Social Media Links
-export const Linkedin_Link = "https://www.linkedin.com/in/chetannada/";
-export const Twitter_Link = "https://twitter.com/ChetanNada";
-export const Github_Link = "https://github.com/chetannada";
-export const Email_Link = "mailto:call2chetannada@gmail.com";
+export const Linkedin_Link = "https://www.linkedin.com/in/foryougautam/";
+export const Twitter_Link = "https://twitter.com/foryougautam";
+export const Github_Link = "https://github.com/foryougautam";
+export const Email_Link = "mailto:foryougautam@gmail.com";
 
 // Github Authorization Token
 export const options = {
