@@ -20,9 +20,6 @@ export const shimmer_card_unit = 15;
 // shimmer Menu card unit
 export const shimmer_menu_card_unit = 4;
 
-// Github - username
-export const Github_UserName = "ChetanNada";
-export const Github_Repository_Name = "Namaste-React";
 
 // Github API for User
 export const Github_API_User = "https://api.github.com/users/";
