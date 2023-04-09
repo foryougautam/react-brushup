@@ -7,30 +7,62 @@ import { filterData } from "./Utils/Helper"; // For reusability or readability f
 
 // Body Component for body section: It contain all restaurant cards
 const Body = () => {
-  // useState: To create a state variable, searchText, allRestaurants and filteredRestaurants is local state variable
   const [searchText, setSearchText] = useState("");
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
   const [errorMessage, setErrorMessage] = useState("");
+  let offSet = 0;
 
-  // use useEffect for one time call getRestaurants using empty dependency array
+  const handleScroll = (e) => {
+    console.log("Hi");
+    if(window.innerHeight+e.target.documentElement.scrollTop+1 > e.target.documentElement.scrollHeight){
+      getMoreRestaurent();
+    }
+  };
+
   useEffect(() => {
-    getRestaurants(); 
+    getRestaurants();
+    window.addEventListener("scroll", handleScroll);
   }, []);
 
   // async function getRestaurant to fetch Swiggy API data
   async function getRestaurants() {
-    // handle the error using try... catch
     try {
       const response = await fetch(swiggy_api_URL);
       const json = await response.json();
       // updated state variable restaurants with Swiggy API data
       setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
       setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+      console.log(json?.data?.cards[2]?.data?.data?.cards);
     } catch (error) {
       console.log(error);
     }
   }
+
+  
+  // async function getRestaurant to fetch Swiggy API data
+  async function getMoreRestaurent() {
+    try {
+
+console.log(offSet);
+      const response = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5874806&lng=77.3683319&offset=${offSet}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
+      );
+      const json = await response.json();
+      let newAllRestaurent =[]
+      // updated state variable restaurants with Swiggy API data
+      json?.data?.cards.forEach((element) => {
+        newAllRestaurent.push(element.data);
+
+      });
+        //setAllRestaurants(oldRestaurent => [...oldRestaurent, ...newAllRestaurent]);
+        setFilteredRestaurants(oldRestaurent => [...oldRestaurent, ...newAllRestaurent]);
+
+      offSet+= 15;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
 
   // use searchData function and set condition if data is empty show error message
   const searchData = (searchText, restaurants) => {
@@ -62,9 +94,9 @@ const Body = () => {
           value={searchText}
           // update the state variable searchText when we typing in input box
           onChange={(e) => {
-            setSearchText(e.target.value)
-          // when user will enter the data, it automatically called searchData function so it work same as when you click on Search button
-          searchData(e.target.value, allRestaurants);
+            setSearchText(e.target.value);
+            // when user will enter the data, it automatically called searchData function so it work same as when you click on Search button
+            searchData(e.target.value, allRestaurants);
           }}
         ></input>
         <button

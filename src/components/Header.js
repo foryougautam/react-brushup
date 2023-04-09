@@ -48,7 +48,7 @@ const Header = ({totRestaurent}) => {
                 Logout
               </button>
             ) : (
-              <button className="login-btn" onClick={() => navigate("/login")}>
+              <button className="login-btn" onClick={() => navigate("/")}>
                 Login
               </button>
             )}
